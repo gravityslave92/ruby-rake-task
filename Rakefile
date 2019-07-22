@@ -60,6 +60,5 @@ def parse_args(command)
   args = opt_parser.order!(ARGV) {}
   opt_parser.parse!(args)
 
-  puts options
   options
 end

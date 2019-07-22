@@ -12,7 +12,7 @@ class DBConnection
 
   def query_data(num_workers, restart)
     result = query_data_from_db(num_workers, restart)
-    return result.delete!('{}') if num_workers == 1
+    return result.getvalue(0,0).delete!('{}') if num_workers == 1
 
     (0...num_workers).map do |num|
       result.getvalue(num, 0).delete!('{}')
